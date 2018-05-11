@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "ConsoleAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{25CD51BD-57A4-45EB-8035-72DC210A22D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{BE52EEB3-7EDB-4CE2-8E2F-52B1B1AC4E35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{BE52EEB3-7EDB-4CE2-8E2F-52B1B1AC4E35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4_Basic", "IdentityServer4_Basic\IdentityServer4_Basic.csproj", "{8343FF9B-B5A6-48C8-8B64-B443839B758A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4_Basic", "IdentityServer4_Basic\IdentityServer4_Basic.csproj", "{8343FF9B-B5A6-48C8-8B64-B443839B758A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4_Basic_API", "IdentityServer4_Basic_API\IdentityServer4_Basic_API.csproj", "{8608656B-BF5E-4920-ACD9-74C93A0325E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4_Basic_API", "IdentityServer4_Basic_API\IdentityServer4_Basic_API.csproj", "{8608656B-BF5E-4920-ACD9-74C93A0325E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.Client", "IdentityServer4.Client\IdentityServer4.Client.csproj", "{D329E86C-419E-46A4-8E8C-99582F06AC07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.Client", "IdentityServer4.Client\IdentityServer4.Client.csproj", "{D329E86C-419E-46A4-8E8C-99582F06AC07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer4.Mvc.Client", "IdentityServer4.Mvc.Client\IdentityServer4.Mvc.Client.csproj", "{E5DE1E70-9AF1-424B-AF19-785AD561D65B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D329E86C-419E-46A4-8E8C-99582F06AC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D329E86C-419E-46A4-8E8C-99582F06AC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D329E86C-419E-46A4-8E8C-99582F06AC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5DE1E70-9AF1-424B-AF19-785AD561D65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5DE1E70-9AF1-424B-AF19-785AD561D65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5DE1E70-9AF1-424B-AF19-785AD561D65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5DE1E70-9AF1-424B-AF19-785AD561D65B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

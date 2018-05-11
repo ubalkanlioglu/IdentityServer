@@ -16,9 +16,11 @@ namespace IdentityServer4_Basic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            // configure identity server with in-memory stores, keys, clients and resources
+
+            // configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
                 .AddDeveloperSigningCredential()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers());
