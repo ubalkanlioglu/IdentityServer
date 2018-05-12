@@ -4,6 +4,7 @@ using IdentityServer4.Test;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IdentityServer4_Basic
@@ -27,13 +28,24 @@ namespace IdentityServer4_Basic
                 {
                     SubjectId = "1",
                     Username = "alice",
-                    Password = "password"
+                    Password = "password",
+
+                    Claims = new []
+                    {
+                        new Claim("name", "Alice"),
+                        new Claim("website", "https://alice.com")
+                    }
                 },
                 new TestUser
                 {
                     SubjectId = "2",
                     Username = "bob",
-                    Password = "password"
+                    Password = "password",
+                    Claims = new []
+                    {
+                        new Claim("name", "Bob"),
+                        new Claim("website", "https://bob.com")
+                    }
                 }
             };
         }
@@ -79,21 +91,41 @@ namespace IdentityServer4_Basic
                 },
                 new Client
                 {
+                    //ClientId = "mvc",
+                    //ClientName = "MVC Client",
+                    //AllowedGrantTypes = GrantTypes.Implicit,
+
+                    //// where to redirect to after login
+                    //RedirectUris = { "http://localhost:5002/signin-oidc" },
+
+                    //// where to redirect to after logout
+                    //PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+
+                    //AllowedScopes = new List<string>
+                    //{
+                    //    IdentityServerConstants.StandardScopes.OpenId,
+                    //    IdentityServerConstants.StandardScopes.Profile
+                    //}
+
                     ClientId = "mvc",
                     ClientName = "MVC Client",
-                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
-                    // where to redirect to after login
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
 
-                    // where to redirect to after logout
+                    RedirectUris           = { "http://localhost:5002/signin-oidc" },
                     PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
-                    AllowedScopes = new List<string>
+                    AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
-                    }
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
+                    },
+                    AllowOfflineAccess = true
                 }
             };
         }
