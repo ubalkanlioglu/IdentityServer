@@ -25,10 +25,11 @@ namespace IdentityServer4.Client
                 Console.WriteLine(disco.Error);
                 return;
             }
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
-            //var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
+            //var tokenClient = new TokenClient(disco.TokenEndpoint, "client", "secret");
+            //var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
             //var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("ubalkanlioglu@gmail.com", "!Qazxsw123", "api1");
 
             if (tokenResponse.IsError)
             {
